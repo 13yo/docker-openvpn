@@ -1,6 +1,7 @@
 # OpenVPN for Docker
 
 OpenVPN server in a Docker container complete with an EasyRSA PKI CA.
+(originally by [kylemanna](https://github.com/kylemanna))
 
 Extensively tested on [Digital Ocean $5/mo node](http://bit.ly/1It5g4o).
 
@@ -12,8 +13,8 @@ Extensively tested on [Digital Ocean $5/mo node](http://bit.ly/1It5g4o).
 
 * Initialize the `$OVPN_DATA` container that will hold the configuration files and certificates
 
-        docker run --volumes-from $OVPN_DATA --rm kylemanna/openvpn ovpn_genconfig -u udp://VPN.SERVERNAME.COM
-        docker run --volumes-from $OVPN_DATA --rm -it kylemanna/openvpn ovpn_initpki
+        docker run --volumes-from $OVPN_DATA --rm 13yo/sambavpn ovpn_genconfig -u udp://VPN.SERVERNAME.COM
+        docker run --volumes-from $OVPN_DATA --rm -it 13yo/sambavpn ovpn_initpki
 
 * Start OpenVPN server process
 
